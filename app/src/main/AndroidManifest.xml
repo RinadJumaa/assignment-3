@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment3">
-        <activity android:name=".HomePage"></activity>
+        <activity android:name=".AddCourseActivity"></activity>
+        <activity android:name=".Registeration_Activity" />
+        <activity android:name=".HomePage" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
