@@ -37,7 +37,7 @@
         android:text="Course Name" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edtxtCourseName"
         style="@style/editStyle"
         android:layout_gravity="center" />
 
@@ -50,7 +50,7 @@
         android:text="Course Code" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edtxtCourseCode"
         style="@style/editStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
         android:text="Name of the teacher" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/edttxtTeacherName"
         style="@style/editStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
         android:text="what is the field" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/edttxtfield"
         style="@style/editStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
         android:text="duration" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/edttxtduration"
         style="@style/editStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
         android:text="fees" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/edtxtfees"
         style="@style/editStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -122,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Add Course" />
+        android:text="Add Course"
+        android:onClick="btnAddOnClick"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

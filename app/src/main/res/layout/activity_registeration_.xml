@@ -183,7 +183,8 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="10dp"
                 android:text="SAVE"
-                app:backgroundTint="#5B0E68" />
+                app:backgroundTint="#5B0E68"
+                android:onClick="btnAddOnClick"/>
 
             <TextView
                 android:id="@+id/textView16"

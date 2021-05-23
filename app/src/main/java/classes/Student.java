@@ -6,9 +6,9 @@ public class Student {
     String password ;
     String gender ;
     String birthDate ;
-    int phoneNumber ;
+    String phoneNumber ;
 
-    public Student(String fullName, String email, String password, String gender, String birthDate, int phoneNumber) {
+    public Student(String fullName, String email, String password, String gender, String birthDate, String phoneNumber) {
         this.fullName = fullName;
         this.email = email;
         this.password = password;
@@ -60,11 +60,11 @@ public class Student {
         this.birthDate = birthDate;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

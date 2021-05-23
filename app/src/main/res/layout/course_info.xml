@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/assign3"
-    tools:context=".RegisterActivity">
+    tools:context=".CourseInfo">
 
     <TextView
         android:id="@+id/textView2"
@@ -15,8 +15,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="130dp"
         android:layout_marginRight="130dp"
-        android:layout_marginBottom="504dp"
-        android:text="Sign Up Page"
+        android:layout_marginBottom="520dp"
+        android:text="Course Details"
         android:textColor="#540661"
         android:textSize="24sp" />
 
@@ -37,89 +37,123 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/edttxt_fullName"
+        android:id="@+id/cName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="-450dp"
+        android:layout_marginTop="-500dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="111dp"
         android:layout_marginBottom="239dp"
-        android:hint="Full Name"
+        android:background="#EAC2C2"
+        android:hint="Course Name"
         android:textColor="#540661" />
 
     <EditText
-        android:id="@+id/edttxt_registereEmail"
+        android:id="@+id/cCode"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edttxt_fullName"
+        android:layout_below="@+id/cName"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="-200dp"
+        android:layout_marginTop="-220dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="111dp"
         android:layout_marginBottom="239dp"
-        android:hint="Email"
+        android:background="#EAC2C2"
+        android:hint="Course Code"
         android:inputType="textEmailAddress"
         android:textColor="#540661" />
 
     <EditText
-        android:id="@+id/edttxt_username"
+        android:id="@+id/cTeacher"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edttxt_registereEmail"
+        android:layout_below="@+id/cCode"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="-200dp"
+        android:layout_marginTop="-220dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="111dp"
         android:layout_marginBottom="239dp"
-        android:hint="user name"
+        android:background="#EAC2C2"
+        android:hint="Teacher"
         android:inputType="textPassword"
         android:textColor="#540661" />
 
     <EditText
-        android:id="@+id/edttxt_registerPassword"
+        android:id="@+id/cFees"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edttxt_username"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="-200dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="111dp"
-        android:layout_marginBottom="239dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColor="#540661" />
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edttxt_registerPassword"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-220dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginRight="317dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:background="#EAC2C2"
+        android:hint="Fees" />
+
+    <EditText
+        android:id="@+id/cField"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="400dp"
+        android:background="#EAC2C2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Field" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cFees"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginRight="253dp"
         android:background="@drawable/custom_btn"
-        android:onClick="btn_SignUp"
-        android:text="Sign Up"
+        android:onClick="update_OnClick"
+        android:text="UPDATE"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/btnLoginPage"
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_register"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:text="Already have an account? Login"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
+        android:layout_below="@+id/cFees"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:background="@drawable/custom_btn"
+        android:onClick="Delete_OnClick"
+        android:text="Delete"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cFees"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginRight="163dp"
+        android:background="@drawable/custom_btn"
+        android:onClick="back_OnClick"
+        android:text="Back"
         android:textStyle="bold" />
 
 </RelativeLayout>
