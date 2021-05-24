@@ -1,159 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/assign3"
     tools:context=".CourseInfo">
 
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/txtviewstyle"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="130dp"
-        android:layout_marginRight="130dp"
-        android:layout_marginBottom="520dp"
-        android:text="Course Details"
-        android:textColor="#540661"
-        android:textSize="24sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginRight="85dp"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/cName"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="-500dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="111dp"
-        android:layout_marginBottom="239dp"
-        android:background="#EAC2C2"
-        android:hint="Course Name"
-        android:textColor="#540661" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/cCode"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cName"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="-220dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="111dp"
-        android:layout_marginBottom="239dp"
-        android:background="#EAC2C2"
-        android:hint="Course Code"
-        android:inputType="textEmailAddress"
-        android:textColor="#540661" />
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/txtviewstyle"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="1dp"
+                android:text="Course Details"
+                android:textColor="#540661"
+                android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/cTeacher"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cCode"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="-220dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="111dp"
-        android:layout_marginBottom="239dp"
-        android:background="#EAC2C2"
-        android:hint="Teacher"
-        android:inputType="textPassword"
-        android:textColor="#540661" />
+            <TextView
+                android:id="@+id/cCode"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cName"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#EAC2C2"
+                android:hint="Course Code"
+                android:textColor="#540661" />
 
-    <EditText
-        android:id="@+id/cFees"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="354dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:background="#EAC2C2"
-        android:hint="Fees" />
+            <EditText
+                android:id="@+id/cName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#EAC2C2"
+                android:hint="Course Name"
+                android:textColor="#540661" />
 
-    <EditText
-        android:id="@+id/cField"
-        android:layout_width="295dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="400dp"
-        android:background="#EAC2C2"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Field" />
+            <EditText
+                android:id="@+id/cTeacher"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cCode"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#EAC2C2"
+                android:hint="Teacher"
+                android:textColor="#540661" />
 
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cFees"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="253dp"
-        android:layout_marginRight="253dp"
-        android:background="@drawable/custom_btn"
-        android:onClick="update_OnClick"
-        android:text="UPDATE"
-        android:textStyle="bold" />
+            <EditText
+                android:id="@+id/cDuration"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cCode"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#EAC2C2"
+                android:hint="Duration"
+                android:textColor="#540661" />
+
+            <EditText
+                android:id="@+id/cFees"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#EAC2C2"
+                android:hint="Fees" />
+
+            <EditText
+                android:id="@+id/cField"
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="#EAC2C2"
+                android:ems="10"
+                android:hint="Field"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cFees"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_btn"
+                android:onClick="update_OnClick"
+                android:text="UPDATE"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cFees"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/custom_btn"
+                android:onClick="Delete_OnClick"
+                android:text="Delete"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/myCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#9C27B0"
+                android:fontFamily="@font/handlee"
+                android:text="Confirm deleting the course"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cFees"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_btn"
+                android:onClick="back_OnClick"
+                android:text="Back"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 
 
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cFees"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginRight="85dp"
-        android:background="@drawable/custom_btn"
-        android:onClick="Delete_OnClick"
-        android:text="Delete"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cFees"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginRight="163dp"
-        android:background="@drawable/custom_btn"
-        android:onClick="back_OnClick"
-        android:text="Back"
-        android:textStyle="bold" />
-
-</RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

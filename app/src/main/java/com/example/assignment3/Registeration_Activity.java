@@ -39,7 +39,7 @@ public class Registeration_Activity extends AppCompatActivity {
     private void setViews() {
         fullName = findViewById(R.id.fullName);
         emailAddress = findViewById(R.id.emailAddress);
-        pass = findViewById(R.id.password);
+        pass = findViewById(R.id.registerpassword);
         phone = findViewById(R.id.phoneNumber);
         birth = findViewById(R.id.birthDate);
         checkFemale = findViewById(R.id.checkFemale);
@@ -166,7 +166,9 @@ public class Registeration_Activity extends AppCompatActivity {
     }
 
     public void btnAddOnClick(View view) {
-        String restUrl = "http://192.168.68.107/education_center/registerstudent.php";
+        String mypass = pass.getText().toString();
+        //System.out.println("PASWORDDDDDDDDDDD"+mypass);
+        String restUrl = "http://192.168.0.100/education_center/registerstudent.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {

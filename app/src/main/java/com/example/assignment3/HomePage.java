@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -30,15 +31,25 @@ import classes.Course;
 public class HomePage extends AppCompatActivity {
 
     ListView lst;
+    EditText search;
+    String student = "";
+    TextView name, email,yourbirth,phonenumber,gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        setupViews();
 
-        lst = findViewById(R.id.lst);
 
-        String url = "http://192.168.68.107/education_center/courses.php";
+
+        Intent intent = getIntent();
+        String info = intent.getStringExtra("student");
+        student = info;
+
+        DisplayData();
+
+        String url = "http://192.168.0.100/education_center/courses.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -52,6 +63,27 @@ public class HomePage extends AppCompatActivity {
             runner.execute(url);
         }
 
+
+    }
+
+    private void setupViews() {
+
+        search = findViewById(R.id.edttxtsearch);
+        lst = findViewById(R.id.lst);
+        name = findViewById(R.id.name);
+        email = findViewById(R.id.email);
+        yourbirth = findViewById(R.id.yourbirth);
+        phonenumber =findViewById(R.id.phonenumber);
+        gender = findViewById(R.id.gender);
+    }
+
+    private void DisplayData() {
+        String [] str = student.split(",");
+        name.setText(str[0]);
+        email.setText(str[1]);
+        yourbirth.setText(str[3]);
+        phonenumber.setText(str[4]);
+        gender.setText(str[2]);
 
     }
 
@@ -117,12 +149,41 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void switchSearch(View view) {
+        String url = "http://192.168.0.100/education_center/search.php?code=" + search.getText();
 
-        Intent intent = new Intent (HomePage.this, CourseInfo.class);
-        startActivity(intent);
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.INTERNET)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.INTERNET},
+                    123);
+
+        } else {
+            DownloadTextTasksearch runner = new DownloadTextTasksearch();
+            runner.execute(url);
+
+        }
 
 
 
+
+    }
+
+    private class DownloadTextTasksearch extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls) {
+            return DownloadText(urls[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String result){
+
+            Intent intent = new Intent(HomePage.this, CourseInfo.class);
+            intent.putExtra("info", result);
+            startActivity(intent);
+
+        }
     }
 
 
@@ -164,15 +225,7 @@ public class HomePage extends AppCompatActivity {
                         stringArray);
             lst.setAdapter(itemsAdapter);
 
-            lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                    Intent i = new Intent(HomePage.this, CourseInfo.class);
-//                    startActivity(i);
-
-                }
-            });
 
         }
     }

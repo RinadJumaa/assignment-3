@@ -94,7 +94,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/registerpassword"
                 android:layout_width="324dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -116,7 +116,7 @@
             <EditText
                 android:id="@+id/phoneNumber"
                 android:layout_width="326dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:ems="10"
                 android:importantForAutofill="no"

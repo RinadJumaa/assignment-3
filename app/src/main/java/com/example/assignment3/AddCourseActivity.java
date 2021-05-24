@@ -145,7 +145,7 @@ public class AddCourseActivity extends AppCompatActivity {
     }
 
     public void btnAddOnClick(View view) {
-        String restUrl = "http://192.168.68.107/education_center/addcourse.php";
+        String restUrl = "http://192.168.0.100/education_center/addcourse.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {

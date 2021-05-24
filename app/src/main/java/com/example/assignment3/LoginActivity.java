@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void btn_SignIn(View view) {
 
-        String url = "http://192.168.68.107/education_center/login.php?emailaddress=" + edttxt_email.getText() +"&password="
+        String url = "http://192.168.0.100/education_center/login.php?emailaddress=" + edttxt_email.getText() +"&password="
                 +edttxt_password.getText();
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
@@ -159,13 +159,13 @@ public class LoginActivity extends AppCompatActivity {
 //        EditText edtData = findViewById(R.id.edtData);
 //        edtData.setText(result);
 
-        if(result.equals("Student found")) {
-
-            Intent intent = new Intent(LoginActivity.this, HomePage.class);
-            startActivity(intent);
+        if(result.equals("there is no student registered with this email")) {
+            Toast.makeText(LoginActivity.this, "wrong input", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(LoginActivity.this, "wrong input", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginActivity.this, HomePage.class);
+            intent.putExtra("student",result);
+            startActivity(intent);
         }
     }
 }
